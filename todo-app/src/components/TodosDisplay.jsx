@@ -16,6 +16,4 @@ const TodosDisplay = ({ todos, updateTodo, deleteTodo, handleSelectedVideo }) =>
     </ul>
   </div>
 
-
-
 export default TodosDisplay
