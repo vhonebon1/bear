@@ -3,6 +3,7 @@ import axios from 'axios'
 import update from 'immutability-helper'
 import TodosForm from './TodosForm'
 import TodosDisplay from './TodosDisplay'
+import VideoPlayer from './VideoPlayer'
 
 class TodosContainer extends Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class TodosContainer extends Component {
       todos: [],
       inputValue: '',
       title: "",
-      url: ""
+      url: "",
+      selectedVideo: ""
     }
 	}
 
@@ -45,6 +47,14 @@ class TodosContainer extends Component {
 
   handleChangeUrl = (e) => {
     this.setState({url: e.target.value});
+  }
+
+  handleSelectedVideo = (video) => {
+    this.setState({ selectedVideo: video })
+  }
+
+  clearSelectedVideo = () => {
+    this.setState({ selectedVideo: null })
   }
 
   updateTodo = (e, id) => {
@@ -93,7 +103,14 @@ class TodosContainer extends Component {
           todos={this.state.todos}
           updateTodo={this.updateTodo}
           deleteTodo={this.deleteTodo}
+          handleSelectedVideo={this.handleSelectedVideo}
         />
+        { this.state.selectedVideo &&
+          <VideoPlayer
+            selectedVideo={this.state.selectedVideo}
+            onEnded={this.clearSelectedVideo}
+          />
+        }
       </div>
     )
   }
