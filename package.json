@@ -11,11 +11,14 @@
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.4"
   },
+  "engines": {
+    "node": "8.10.0",
+    "yarn": "1.13.0"
+  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "yarn --cwd todo-app install && yarn --cwd todo-app build",
+    "deploy": "cp -a todo-app/build/. public/",
+    "heroku-postbuild": "yarn build && yarn deploy"
   },
   "eslintConfig": {
     "extends": "react-app"

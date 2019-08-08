@@ -1,2 +1,2 @@
-web:process.env.PORT yarn --cwd todo-app start
-api:process.env.PORT bundle exec rails server
+web: PORT=4000 yarn --cwd todo-app start
+api: PORT=3000 bundle exec rails server
