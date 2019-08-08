@@ -103,13 +103,7 @@ class App extends Component {
             />
           )} />
           <Route path='/tommy-admin' exact render={(props) => (
-            <TodosForm
-              title={this.state.title}
-              url={this.state.url}
-              handleChangeUrl={this.handleChangeUrl}
-              handleChangeTitle={this.handleChangeTitle}
-              createTodo={this.createTodo}
-            />
+            <div>hey</div>
           )} />
         </Switch>
       </Router>
