@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :todos
   end
 
-  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+  get '*path', to: "static_pages#index", constraints: ->(request) do
     !request.xhr? && request.format.html?
   end
 end
