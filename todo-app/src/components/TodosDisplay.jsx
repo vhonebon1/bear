@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const TodosDisplay = ({ todos, updateTodo, deleteTodo, handleSelectedVideo }) =>
   <div className="listWrapper">

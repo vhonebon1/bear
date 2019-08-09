@@ -1,3 +1,6 @@
+#root {
+	padding: 20px;
+}
 
 ul.taskList {
 	padding: 0 25px;
@@ -72,6 +75,12 @@ input[placeholder] {
 	font-family: Tahoma, sans-serif;
 }
 
+.formContainer {
+	display: flex;
+	margin: 20px 0;
+
+}
+
 .inputContainer {
 	padding: 15px;
 }
@@ -83,22 +92,10 @@ input[placeholder] {
 	box-sizing: border-box;
 }
 
-.listWrapper {
-	margin-top: 50px;
+.taskInput {
+	margin-bottom: 10px;
 }
 
-.deleteTaskBtn {
-	float: right;
-	color: red;
-	background: rgba(0,0,0,0);
-	font-size: 20px;
-	font-weight: bold;
-	border: 1px solid white;
-	border-radius: 50%;
-	padding: 10px 5px;
-	visibility: hidden;
-	opacity: 0;
-	line-height: 0;
-	margin-right: 5px;
-	cursor: default;
+.listWrapper {
+	margin-top: 50px;
 }
