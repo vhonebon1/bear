@@ -131,7 +131,7 @@ input[placeholder] {
 	align-items: right;
 }
 
-.video-close img {
+.video-close svg {
 	float: right;
 	margin-bottom: 8px;
 }
