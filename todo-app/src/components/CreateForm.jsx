@@ -22,8 +22,7 @@ class CreateForm extends React.Component {
     const { title, url, createTodo } = this.props;
 
     return(
-      <React.Fragment>
-        <h2>Add a new video</h2>
+      <div className="create-form">
         <div className="inputContainer">
           <label>Video title</label>
           <input
@@ -34,7 +33,10 @@ class CreateForm extends React.Component {
             value={title}
             onChange={(e) => this.handleChangeTitle(e)}
           />
-        <label>YouTube id</label>
+          <label className="formContainer__label">YouTube id
+            <span> </span>
+            <a href="https://docs.joeworkman.net/rapidweaver/stacks/youtube/video-id" target="_blank">WTF is this?</a>
+          </label>
           <input
             className="taskInput"
             type="text"
@@ -45,7 +47,7 @@ class CreateForm extends React.Component {
           />
           <button onClick={() => createTodo(this.state.title, this.state.url)}>Add</button>
         </div>
-      </React.Fragment>
+      </div>
     )
   }
 }

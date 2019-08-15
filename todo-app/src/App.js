@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios'
 import update from 'immutability-helper'
 import TodosDisplay from './components/TodosDisplay.jsx'
+import HomePage from './components/HomePage.jsx'
 import Admin from './components/Admin.jsx'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
@@ -11,10 +12,10 @@ class App extends Component {
     super(props)
     this.state = {
       todos: [],
-      inputValue: '',
+      inputValue: "",
       title: "",
       url: "",
-      selectedVideo: ""
+      selectedVideo: false
     }
   }
 
@@ -37,8 +38,8 @@ class App extends Component {
     .catch(error => console.log(error))
   }
 
+
   handleChangeTitle = (e) => {
-    console.log('yo')
     this.setState({title: e.target.value});
   }
 
@@ -48,6 +49,10 @@ class App extends Component {
 
   handleSelectedVideo = (video) => {
     this.setState({ selectedVideo: video })
+  }
+
+  handleClearSelected = () => {
+    this.setState({ selectedVideo: false })
   }
 
   clearSelectedVideo = () => {
@@ -87,10 +92,12 @@ class App extends Component {
       <Router>
         <Switch>
           <Route path='/' exact render={(props) => (
-            <TodosDisplay
+            <HomePage
               todos={this.state.todos}
               updateTodo={this.updateTodo}
               handleSelectedVideo={this.handleSelectedVideo}
+              handleClearSelected={this.handleClearSelected}
+              selectedVideo={this.state.selectedVideo}
             />
           )} />
           <Route path='/tommy-admin' exact render={(props) => (

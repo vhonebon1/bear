@@ -1,22 +1,65 @@
 #root {
 	padding: 20px;
+	height: calc(100% - 40px);
+}
+
+body {
+	height: 100vh;
 }
 
 ul.taskList {
-	padding: 0 25px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0 30px;
 }
 
 li.task {
+	display: flex;
+	justify-content: flex-start;
+	flex: 0 0 48%;
 	list-style-type: none;
 	font-family: Tahoma;
 	font-size: 1.2em;
 	padding: 10px 0;
-	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
 }
 
 li.task:hover .deleteTaskBtn {
 	visibility: visible;
 	opacity: 1;
+}
+
+.homepage-wrapper {
+	height: 100%;
+}
+
+.header-wrapper {
+	display: flex;
+	margin-bottom: 60px;
+}
+
+.header {
+	font: normal normal normal 80px/1.4em arial,'ｍｓ ｐゴシック','ms pgothic','돋움',dotum,helvetica,sans-serif;
+	margin: 0;
+	line-height: 80px;
+}
+
+.admin-image:hover {
+	cursor: pointer;
+	filter: brightness(110%);
+}
+
+.admin-image-update {
+	height: 200px;
+}
+
+.header-subtitle {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	font: normal normal normal 40px/1.4em arial,'ｍｓ ｐゴシック','ms pgothic','돋움',dotum,helvetica,sans-serif;
+	margin: 0 0 0 20px;
 }
 
 input.taskCheckbox {
@@ -75,14 +118,58 @@ input[placeholder] {
 	font-family: Tahoma, sans-serif;
 }
 
+.admin-wrapper {
+	padding: 30px;
+}
+
+.admin-wrapper h2 {
+	margin: 30px 0;
+}
+
+.video-close:hover {
+	cursor: pointer;
+	align-items: right;
+}
+
+.video-close img {
+	float: right;
+	margin-bottom: 8px;
+}
+
+.video-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	z-index: 3;
+	display: flex;
+	justify-content: space-around;
+	background-color: rgba(0,0,0,.5);
+	display: flex;
+	justify-content: space-around;
+}
+
+.video-wrapper div {
+	margin: auto 0;
+}
+
 .formContainer {
 	display: flex;
-	margin: 20px 0;
-
+	justify-content: space-between;
+	margin: 20px 0 30px 0;
+	border: 1px solid black;
+	padding: 20px;
 }
 
 .inputContainer {
 	padding: 15px;
+	flex: 0 0 60%;
+}
+
+.create-form {
+	border: 1px solid black;
+	padding: 20px;
 }
 
 .inputContainer .taskInput {
@@ -90,6 +177,11 @@ input[placeholder] {
 	width: 100%;
 	border-radius: 25px;
 	box-sizing: border-box;
+	margin-top: 5px;
+}
+
+.formContainer__label {
+	margin-bottom: 10px;
 }
 
 .taskInput {

@@ -24,9 +24,9 @@ class UpdateForm extends React.Component {
     return(
       <React.Fragment>
         <div className="formContainer">
-          <img className="admin-image" alt="" src={`http://img.youtube.com/vi/${url}/0.jpg`} />
+          <img className="admin-image-update" alt="" src={`http://img.youtube.com/vi/${url}/0.jpg`} />
           <div className="inputContainer">
-            <label>Video title</label>
+            <label className="formContainer__label">Video title</label>
             <input
               className="taskInput"
               type="text"
@@ -35,7 +35,10 @@ class UpdateForm extends React.Component {
               value={this.state.title}
               onChange={(e) => this.handleChangeTitle(e)}
             />
-            <label>YouTube id</label>
+            <label className="formContainer__label">YouTube id
+              <span> </span>
+              <a href="https://docs.joeworkman.net/rapidweaver/stacks/youtube/video-id" target="_blank">WTF is this?</a>
+            </label>
             <input
               className="taskInput"
               type="text"

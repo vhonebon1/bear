@@ -3,7 +3,9 @@ import UpdateForm from './UpdateForm'
 import CreateForm from './CreateForm'
 
 const Admin = ({ todos, createTodo, updateTodo, handleSelectedVideo, deleteTodo }) =>
-  <React.Fragment>
+  <div className="admin-wrapper">
+    <h1>Admin</h1>
+    <h2>Add a new video</h2>
     <CreateForm
       createTodo={createTodo}
     />
@@ -20,6 +22,6 @@ const Admin = ({ todos, createTodo, updateTodo, handleSelectedVideo, deleteTodo 
           />
         </React.Fragment>)
       })}
-  </React.Fragment>
+  </div>
 
 export default Admin
