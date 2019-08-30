@@ -12,6 +12,8 @@ const VideoPlayer = ({ selectedVideo, onEnded, handleClearSelected }) =>
         url={`https://www.youtube.com/watch?v=${selectedVideo}&start_radio=1&list=RDDDWKuo3gXMQ`}
         playing
         onEnded={onEnded}
+        width='80vw'
+        height='70vh'
       />
     </div>
   </div>

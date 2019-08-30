@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios'
 import update from 'immutability-helper'
-import TodosDisplay from './components/TodosDisplay.jsx'
 import HomePage from './components/HomePage.jsx'
 import Admin from './components/Admin.jsx'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -101,15 +100,15 @@ class App extends Component {
             />
           )} />
           <Route path='/tommy-admin' exact render={(props) => (
-            <Admin
-              todos={this.state.todos}
-              title={this.state.title}
-              url={this.state.url}
-              createTodo={this.createTodo}
-              updateTodo={this.updateTodo}
-              deleteTodo={this.deleteTodo}
-            />
-          )} />
+              <Admin
+                todos={this.state.todos}
+                title={this.state.title}
+                url={this.state.url}
+                createTodo={this.createTodo}
+                updateTodo={this.updateTodo}
+                deleteTodo={this.deleteTodo}
+              />
+            )} />
         </Switch>
       </Router>
     );
