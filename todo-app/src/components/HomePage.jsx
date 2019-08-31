@@ -1,9 +1,10 @@
 import React from 'react'
 import Header from './Header'
-import FilmsDisplay from './FilmsDisplay'
+import LargeTile from './LargeTile'
+import SmallTiles from './SmallTiles'
 import VideoPlayer from './VideoPlayer'
 
-const HomePage = ({ todos, largeTile, smallTiles, updateTodo, selectedVideo, handleSelectedVideo, handleClearSelected }) =>
+const HomePage = ({ largeTile, smallTiles, updateTodo, selectedVideo, handleSelectedVideo, handleClearSelected, hasFilms }) =>
   <React.Fragment>
     <div className={`homepage-wrapper ${selectedVideo && "modal"}`}>
       <Header />
@@ -13,18 +14,19 @@ const HomePage = ({ todos, largeTile, smallTiles, updateTodo, selectedVideo, han
           onEnded={handleClearSelected}
           handleClearSelected={handleClearSelected}
         /> :
-        <FilmsDisplay
-          todos={todos.length > 0 ? [todos[0]] : [{}]}
+        <LargeTile
+          hasFilms={hasFilms}
+          todo={largeTile}
           updateTodo={updateTodo}
           handleSelectedVideo={handleSelectedVideo}
         />
       }
     </div>
-    <FilmsDisplay
-      todos={todos.length > 0 ? todos.slice(1) : [{}]}
+    <SmallTiles
+      hasFilms={hasFilms}
+      todos={smallTiles}
       updateTodo={updateTodo}
       handleSelectedVideo={handleSelectedVideo}
-      landscape
     />
   </React.Fragment>
 

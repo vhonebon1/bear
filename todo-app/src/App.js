@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import axios from 'axios'
 import update from 'immutability-helper'
 import HomePage from './components/HomePage.jsx'
@@ -10,20 +10,25 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      todos: [],
       inputValue: "",
       title: "",
       url: "",
-      selectedVideo: false
+      selectedVideo: false,
+      hasFilms: false
     }
   }
 
   getTodos() {
     axios.get('/api/v1/todos')
     .then(response => {
-      this.setState({todos: response.data})
+      this.setFilms(response.data);
     })
     .catch(error => console.log(error))
+  }
+
+  setFilms = (response) => {
+    const smallTiles = response.filter((item) => item !== response[0])
+    this.setState({ large: response[0], small: smallTiles, hasFilms: true})
   }
 
   createTodo = (title, url) => {
@@ -92,11 +97,13 @@ class App extends Component {
         <Switch>
           <Route path='/' exact render={(props) => (
             <HomePage
-              todos={this.state.todos}
+              largeTile={this.state.large}
+              smallTiles={this.state.small}
               updateTodo={this.updateTodo}
               handleSelectedVideo={this.handleSelectedVideo}
               handleClearSelected={this.handleClearSelected}
               selectedVideo={this.state.selectedVideo}
+              hasFilms={this.state.hasFilms}
             />
           )} />
           <Route path='/tommy-admin' exact render={(props) => (
