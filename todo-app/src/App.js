@@ -29,12 +29,23 @@ class App extends Component {
   }
 
   setFilms = (response) => {
-    const smallTiles = response.filter((item) => !item.large);
-    const largeTile = response.filter((item) => item.large) || smallTiles[0]
     this.setState({ todos: response,
-                    large: largeTile[0],
-                    small: smallTiles,
+                    large: this.largeTile(response),
+                    small: this.smallTiles(response),
                     hasFilms: true })
+  }
+
+  smallTiles = (response) => {
+    return response.filter((item) => !item.large);
+  }
+
+  largeTile = (response) => {
+    const filteredByLarge = response.filter((item) => item.large);
+    if (filteredByLarge.length > 0) {
+      return filteredByLarge[0]
+    } else {
+      return response[0]
+    }
   }
 
   createTodo = (title, url, large) => {
