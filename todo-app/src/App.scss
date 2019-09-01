@@ -33,21 +33,30 @@ body {
   background-size: contain;
 	background-position: right center;
 	margin: auto 0;
-	svg {
+	svg, .video-title {
 		display: none;
 	}
 	&:hover {
 		cursor: pointer;
-		svg {
+		svg, .video-title {
 			display:block;
 		}
 	}
 }
 
-.video-play-icon {
+.hover-elems {
+	margin: auto auto;
+}
+
+.video-play-icon, .video-title {
 	padding-left: 15%;
 	display: block;
 	margin: 0 auto;
+}
+
+.video-title {
+	color: white;
+	text-align: center;
 }
 
 .homepage-wrapper {
@@ -203,12 +212,12 @@ body {
 	justify-content: space-around;
 	background-repeat: no-repeat;
 	background-size: contain;
-	svg {
+	svg, .video-title {
 		display: none;
 	}
 	&:hover {
 		cursor: pointer;
-		.video-play-icon {
+		.video-play-icon, .video-title {
 			display: block;
 		}
 	}

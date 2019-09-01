@@ -6,7 +6,10 @@ const LargeTile = ({ todo, handleSelectedVideo, hasFilms }) =>
     <ul className="taskList">
       { hasFilms &&
         <li className="task" key={todo.id} style={{ backgroundImage: `url(http://img.youtube.com/vi/${todo.url}/0.jpg)`}}>
-          <IosPlayOutline className="video-play-icon" onClick={() => handleSelectedVideo(todo.url)} fontSize="100px" color="#fff" />
+          <div className="hover-elems">
+            <IosPlayOutline className="video-play-icon" onClick={() => handleSelectedVideo(todo.url)} fontSize="100px" color="#fff" />
+            <div className="video-title">{todo.title}</div>
+          </div>
         </li>
       }
     </ul>
