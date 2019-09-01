@@ -30,8 +30,7 @@ class App extends Component {
 
   setFilms = (response) => {
     const smallTiles = response.filter((item) => !item.large);
-    const largeTile = response.filter((item) => item.large)
-    console.log(response.filter((item) => item.large))
+    const largeTile = response.filter((item) => item.large) || smallTiles[0]
     this.setState({ todos: response,
                     large: largeTile[0],
                     small: smallTiles,
@@ -99,7 +98,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.todos)
     return (
       <Router>
         <Switch>
@@ -116,7 +114,7 @@ class App extends Component {
           )} />
           <Route path='/tommy-admin' exact render={(props) => (
               <Admin
-                todos={this.state.todos.length > 0 && this.state.todos}
+                todos={this.state.todos}
                 createTodo={this.createTodo}
                 updateTodo={this.updateTodo}
                 deleteTodo={this.deleteTodo}
