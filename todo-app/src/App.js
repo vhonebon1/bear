@@ -10,6 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      todos: [],
       inputValue: "",
       title: "",
       url: "",
@@ -27,8 +28,13 @@ class App extends Component {
   }
 
   setFilms = (response) => {
-    const smallTiles = response.filter((item) => item !== response[0])
-    this.setState({ large: response[0], small: smallTiles, hasFilms: true})
+    const smallTiles = response.filter((item) => !item.large);
+    const largeTile = response.filter((item) => item.large)
+    console.log(response.filter((item) => item.large))
+    this.setState({ todos: response,
+                    large: largeTile[0],
+                    small: smallTiles,
+                    hasFilms: true })
   }
 
   createTodo = (title, url) => {
@@ -63,8 +69,8 @@ class App extends Component {
     this.setState({ selectedVideo: null })
   }
 
-  updateTodo = (title, url, id) => {
-    axios.put(`/api/v1/todos/${id}`, {todo: {title: title, url: url}})
+  updateTodo = (title, url, id, large) => {
+    axios.put(`/api/v1/todos/${id}`, {todo: {title: title, id: id, url: url, large: large}})
     .then(response => {
       const todoIndex = this.state.todos.findIndex(x => x.id === response.data.id)
       const todos = update(this.state.todos, {
@@ -92,6 +98,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.todos)
     return (
       <Router>
         <Switch>
@@ -108,9 +115,7 @@ class App extends Component {
           )} />
           <Route path='/tommy-admin' exact render={(props) => (
               <Admin
-                todos={this.state.todos}
-                title={this.state.title}
-                url={this.state.url}
+                todos={this.state.todos.length > 0 && this.state.todos}
                 createTodo={this.createTodo}
                 updateTodo={this.updateTodo}
                 deleteTodo={this.deleteTodo}

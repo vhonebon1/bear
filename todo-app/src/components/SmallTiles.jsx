@@ -1,7 +1,7 @@
 import React from 'react'
 import IosPlayOutline from 'react-ionicons/lib/IosPlayOutline'
 
-const SmallTiles = ({ todos, updateTodo, deleteTodo, handleSelectedVideo, handleClearSelected, hasFilms }) =>
+const SmallTiles = ({ todos, handleSelectedVideo, hasFilms }) =>
   <div className="smallTile-wrapper">
     { hasFilms &&
       <React.Fragment>

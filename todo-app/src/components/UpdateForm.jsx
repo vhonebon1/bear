@@ -6,7 +6,8 @@ class UpdateForm extends React.Component {
     super(props);
     this.state = {
       title: this.props.title,
-      url: this.props.url
+      url: this.props.url,
+      large: this.props.large
     }
   }
 
@@ -16,6 +17,10 @@ class UpdateForm extends React.Component {
 
   handleChangeUrl = (e) => {
     this.setState({ url: e.target.value })
+  }
+
+  handleChangeLarge = (e) => {
+    this.setState({ large: e.target.checked })
   }
 
   render() {
@@ -47,8 +52,14 @@ class UpdateForm extends React.Component {
               value={this.state.url}
               onChange={(e) => this.handleChangeUrl(e)}
             />
+            <input
+              type="checkbox"
+              onChange={(e) => this.handleChangeLarge(e)}
+              checked={this.state.large}
+            />
+            <label>Featured tile</label>
             <button className="deleteTaskBtn" onClick={(e) => deleteTodo(id)}>Delete</button>
-            <button onClick={() => updateTodo(this.state.title, this.state.url, id)}>Update</button>
+            <button onClick={() => updateTodo(this.state.title, this.state.url, id, this.state.large)}>Update</button>
           </div>
         </div>
       </React.Fragment>

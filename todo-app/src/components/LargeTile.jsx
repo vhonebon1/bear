@@ -1,7 +1,7 @@
 import React from 'react'
 import IosPlayOutline from 'react-ionicons/lib/IosPlayOutline'
 
-const LargeTile = ({ todo, updateTodo, deleteTodo, handleSelectedVideo, handleClearSelected, hasFilms }) =>
+const LargeTile = ({ todo, handleSelectedVideo, hasFilms }) =>
   <div className="listWrapper">
     <ul className="taskList">
       { hasFilms &&
