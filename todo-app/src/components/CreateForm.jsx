@@ -6,7 +6,8 @@ class CreateForm extends React.Component {
     super(props);
     this.state = {
       title: "",
-      url: ""
+      url: "",
+      large: null
     }
   }
 
@@ -16,6 +17,10 @@ class CreateForm extends React.Component {
 
   handleChangeUrl = (e) => {
     this.setState({ url: e.target.value })
+  }
+
+  handleChangeLarge = (e) => {
+    this.setState({ large: e.target.checked })
   }
 
   render() {
@@ -45,7 +50,13 @@ class CreateForm extends React.Component {
             value={url}
             onChange={(e) => this.handleChangeUrl(e)}
           />
-          <button onClick={() => createTodo(this.state.title, this.state.url)}>Add</button>
+          <input
+            type="checkbox"
+            onChange={(e) => this.handleChangeLarge(e)}
+            checked={this.state.large}
+          />
+          <label>Featured tile</label>
+          <button onClick={() => createTodo(this.state.title, this.state.url, this.state.large)}>Add</button>
         </div>
       </div>
     )

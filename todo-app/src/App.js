@@ -14,6 +14,7 @@ class App extends Component {
       inputValue: "",
       title: "",
       url: "",
+      large: null,
       selectedVideo: false,
       hasFilms: false
     }
@@ -37,13 +38,13 @@ class App extends Component {
                     hasFilms: true })
   }
 
-  createTodo = (title, url) => {
-    axios.post('/api/v1/todos', {todo: {title: title, url: url}})
+  createTodo = (title, url, large) => {
+    axios.post('/api/v1/todos', {todo: {title: title, url: url, large: large}})
     .then(response => {
       const todos = update(this.state.todos, {
         $splice: [[0, 0, response.data]]
       })
-      this.setState({ todos: todos, inputValue: "", title: "", url: "" })
+      this.setState({ todos: todos, inputValue: "", title: "", url: "", large: null })
     })
     .catch(error => console.log(error))
   }
