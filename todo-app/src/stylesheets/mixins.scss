@@ -2,6 +2,7 @@ $grey: #4B4A4E;
 $homepage-background: #E6EAEB;
 $danger-red: #D93025;
 $button-blue: #5DACEB;
+$disabled-grey: #DDDDDD;
 
 @mixin bp-large {
   @media only screen and (min-width: 800px) {

@@ -1,5 +1,8 @@
 .messageModal {
 	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 	margin: 0 calc(30vw - 4em);
 	width: 40vw;
 	height: 30vh;
@@ -13,4 +16,11 @@
 	z-index: 5;
 	font-size: 1.2em;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+}
+
+.messageModal-inner {
+	svg {
+		display: block;
+		margin: 0 auto;
+	}
 }

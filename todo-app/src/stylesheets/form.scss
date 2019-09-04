@@ -31,3 +31,18 @@
 .taskInput {
 	margin-bottom: 10px;
 }
+
+.formInner {
+	display: flex;
+	justify-content: space-between;
+}
+
+.formInner-wrapper {
+	button {
+		margin-left: 8px;
+	}
+}
+
+.label-block {
+	margin-left: 8px;
+}

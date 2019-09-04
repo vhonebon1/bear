@@ -24,6 +24,12 @@ class UpdateForm extends React.Component {
     this.setState({ large: e.target.checked })
   }
 
+  hasChanges = () => {
+    return this.state.title !== this.props.title ||
+    this.state.url !== this.props.url ||
+    this.state.large !== this.props.large
+  }
+
   render() {
     const { updateTodo, id, url, handleDeleteFilm } = this.props;
 
@@ -53,14 +59,20 @@ class UpdateForm extends React.Component {
               value={this.state.url}
               onChange={(e) => this.handleChangeUrl(e)}
             />
-            <input
-              type="checkbox"
-              onChange={(e) => this.handleChangeLarge(e)}
-              checked={this.state.large}
-            />
-            <label>Featured tile</label>
-            <button className="deleteTaskBtn" onClick={(e) => handleDeleteFilm(id)}>Delete</button>
-            <button onClick={() => updateTodo(this.state.title, this.state.url, id, this.state.large)}>Update</button>
+            <div className="formInner">
+              <div>
+                <input
+                  type="checkbox"
+                  onChange={(e) => this.handleChangeLarge(e)}
+                  checked={this.state.large}
+                  />
+                <label className="label-block">Featured tile</label>
+              </div>
+              <div className="formInner-wrapper">
+                <button className="button" disabled={!this.hasChanges()} onClick={() => updateTodo(this.state.title, this.state.url, id, this.state.large)}>Update</button>
+                <button className="button danger" onClick={(e) => handleDeleteFilm(id)}>Delete</button>
+              </div>
+            </div>
           </div>
         </div>
       </React.Fragment>

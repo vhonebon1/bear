@@ -1,12 +1,23 @@
 .button {
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: $button-blue;
-  padding: 0.8em 1.1em;
+  padding: 0.75em 1em;
   color: white;
   font-size: 1.1em;
   border: none;
   &.danger {
     background-color: $danger-red;
+  }
+  &.white {
+    background-color: white;
+    color: $grey;
+    border: 1px solid $grey;
+  }
+  &:disabled {
+    background-color: $disabled-grey;
+    &:hover {
+      cursor: not-allowed;
+    }
   }
   &:hover {
     cursor: pointer;
