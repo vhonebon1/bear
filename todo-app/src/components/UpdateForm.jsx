@@ -1,4 +1,5 @@
 import React from 'react'
+import MessageModal from './MessageModal'
 
 class UpdateForm extends React.Component {
 
@@ -24,7 +25,7 @@ class UpdateForm extends React.Component {
   }
 
   render() {
-    const { updateTodo, id, deleteTodo, url } = this.props;
+    const { updateTodo, id, url, handleDeleteFilm } = this.props;
 
     return(
       <React.Fragment>
@@ -58,7 +59,7 @@ class UpdateForm extends React.Component {
               checked={this.state.large}
             />
             <label>Featured tile</label>
-            <button className="deleteTaskBtn" onClick={(e) => deleteTodo(id)}>Delete</button>
+            <button className="deleteTaskBtn" onClick={(e) => handleDeleteFilm(id)}>Delete</button>
             <button onClick={() => updateTodo(this.state.title, this.state.url, id, this.state.large)}>Update</button>
           </div>
         </div>

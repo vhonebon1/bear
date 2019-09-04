@@ -6,8 +6,9 @@ import HomePage from './components/HomePage.jsx'
 import Admin from './components/Admin.jsx'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-const UPDATE_MESSAGE = "Your updates have been made. Don't forget to check that only one film is ticked as large."
-const CREATE_MESSAGE = "The new film has been added. Don't forget to check that only one film is ticked as large."
+const UPDATE_MESSAGE = "Your updates have been made. Don't forget to check that only one film is ticked as large :)"
+const CREATE_MESSAGE = "The new film has been added. Don't forget to check that only one film is ticked as large :)"
+const DELETE_MESSAGE = "Are you sure you want to delete this? It will be gone forever once you delete."
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +21,9 @@ class App extends Component {
       large: null,
       selectedVideo: false,
       hasFilms: false,
-      adminMessage: null
+      adminMessage: null,
+      deletePrompt: null,
+      idToDelete: null
     }
   }
 
@@ -32,6 +35,19 @@ class App extends Component {
 
   clearMessage = () => {
     this.setState({ adminMessage: null })
+  }
+
+  handleDeleteFilm = (id) => {
+    this.setState({ deletePrompt: DELETE_MESSAGE, idToDelete: id })
+  }
+
+  handleConfirmDelete = () => {
+    this.deleteTodo(this.state.idToDelete)
+    this.setState({ deletePrompt: null })
+  }
+
+  cancelDelete = () => {
+    this.setState({ deletePrompt: null, idToDelete: null })
   }
 
   getTodos() {
@@ -122,7 +138,7 @@ class App extends Component {
       const todos = update(this.state.todos, {
         $splice: [[todoIndex, 1]]
       })
-      this.setState({ todos: todos })
+      this.setState({ todos: todos, idToDelete: null })
     })
     .catch(error => console.log(error))
   }
@@ -132,7 +148,7 @@ class App extends Component {
   }
 
   render() {
-    const { large, small, selectedVideo, hasFilms, adminMessage, todos } = this.state;
+    const { large, small, selectedVideo, hasFilms, adminMessage, todos, deletePrompt } = this.state;
 
     return (
       <Router>
@@ -155,6 +171,10 @@ class App extends Component {
                 updateTodo={this.updateTodo}
                 deleteTodo={this.deleteTodo}
                 adminMessage={adminMessage}
+                deletePrompt={deletePrompt}
+                handleDeleteFilm={this.handleDeleteFilm}
+                handleConfirmDelete={this.handleConfirmDelete}
+                cancelDelete={this.cancelDelete}
               />
             )} />
         </Switch>

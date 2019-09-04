@@ -3,12 +3,20 @@ import UpdateForm from './UpdateForm'
 import CreateForm from './CreateForm'
 import MessageModal from './MessageModal'
 
-const Admin = ({ todos, createTodo, updateTodo, deleteTodo, adminMessage }) =>
+const Admin = ({ todos, createTodo, updateTodo, deleteTodo, adminMessage, deletePrompt, handleDeleteFilm, handleConfirmDelete, cancelDelete }) =>
   <div className="admin-wrapper">
     <h1>Admin</h1>
     <h2>Add a new video</h2>
     { adminMessage &&
       <MessageModal message={adminMessage} />
+    }
+    { deletePrompt &&
+      <MessageModal
+        message={deletePrompt}
+        onSubmit={handleConfirmDelete}
+        onCancel={cancelDelete}
+        deleteType
+      />
     }
     { todos.length > 0 &&
       <React.Fragment>
@@ -24,8 +32,8 @@ const Admin = ({ todos, createTodo, updateTodo, deleteTodo, adminMessage }) =>
                 url={todo.url}
                 id={todo.id}
                 large={todo.large}
-                deleteTodo={deleteTodo}
-                updateTodo={updateTodo}
+                deletePrompt={deletePrompt}
+                handleDeleteFilm={handleDeleteFilm}
               />
             </React.Fragment>)
           })}
