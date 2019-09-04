@@ -34,6 +34,7 @@ const Admin = ({ todos, createTodo, updateTodo, deleteTodo, adminMessage, delete
                 large={todo.large}
                 deletePrompt={deletePrompt}
                 handleDeleteFilm={handleDeleteFilm}
+                updateTodo={updateTodo}
               />
             </React.Fragment>)
           })}
