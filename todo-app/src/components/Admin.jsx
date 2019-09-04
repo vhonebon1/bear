@@ -7,9 +7,7 @@ const Admin = ({ todos, createTodo, updateTodo, deleteTodo, adminMessage, delete
   <div className="admin-wrapper">
     <h1>Admin</h1>
     <h2>Add a new video</h2>
-    { adminMessage &&
-      <MessageModal message={adminMessage} />
-    }
+    { adminMessage && <MessageModal message={adminMessage} /> }
     { deletePrompt &&
       <MessageModal
         message={deletePrompt}
@@ -26,7 +24,6 @@ const Admin = ({ todos, createTodo, updateTodo, deleteTodo, adminMessage, delete
         <h2>Update existing videos</h2>
         {todos.map((todo) => {
           return(
-            <React.Fragment>
               <UpdateForm
                 title={todo.title}
                 url={todo.url}
@@ -35,9 +32,8 @@ const Admin = ({ todos, createTodo, updateTodo, deleteTodo, adminMessage, delete
                 deletePrompt={deletePrompt}
                 handleDeleteFilm={handleDeleteFilm}
                 updateTodo={updateTodo}
-              />
-            </React.Fragment>)
-          })}
+              />)
+        })}
       </React.Fragment>
     }
   </div>
