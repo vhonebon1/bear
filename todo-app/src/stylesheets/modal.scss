@@ -1,12 +1,12 @@
 .messageModal {
 	position: fixed;
-	margin: 40vh 30vw;
+	margin: 0 calc(30vw - 4em);
 	width: 40vw;
-	height: 20vh;
+	height: 30vh;
 	color: $grey;
 	background-color: white;
 	border: 1px;
-	padding: 5em;
+	padding: 2em;
 	text-align: center;
 	border: 1px solid $grey;
 	border-radius: 20px;
