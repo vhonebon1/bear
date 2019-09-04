@@ -3,37 +3,78 @@ import UpdateForm from './UpdateForm'
 import CreateForm from './CreateForm'
 import MessageModal from './MessageModal'
 
-const Admin = ({ todos, createTodo, updateTodo, deleteTodo, adminMessage, deletePrompt, handleDeleteFilm, handleConfirmDelete, cancelDelete }) =>
-  <div className="admin-wrapper">
-    <h1>Admin</h1>
-    <h2>Add a new video</h2>
-    { adminMessage && <MessageModal message={adminMessage} /> }
-    { deletePrompt &&
+class Admin extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      createForm: false
+    }
+  }
+
+  toggleCreate = () => {
+    this.setState({ createForm: !this.state.createForm })
+  }
+
+  renderCreateForm = () => {
+    return(
+      <React.Fragment>
+        <h2>Add a new video</h2>
+        <CreateForm createTodo={this.props.createTodo} />
+      </React.Fragment>
+    )
+  }
+
+  renderDeleteModal = () => {
+    return(
       <MessageModal
-        message={deletePrompt}
-        onSubmit={handleConfirmDelete}
-        onCancel={cancelDelete}
+        message={this.props.deletePrompt}
+        onSubmit={this.props.handleConfirmDelete}
+        onCancel={this.props.cancelDelete}
         deleteType
       />
-    }
-    { todos.length > 0 &&
+    )
+  }
+
+  renderUpdateForms = () => {
+    return(
       <React.Fragment>
-        <CreateForm createTodo={createTodo} />
         <h2>Update existing videos</h2>
-        {todos.map((todo) => {
+        {this.props.todos.map((todo) => {
           return(
             <UpdateForm
               title={todo.title}
               url={todo.url}
               id={todo.id}
               large={todo.large}
-              deletePrompt={deletePrompt}
-              handleDeleteFilm={handleDeleteFilm}
-              updateTodo={updateTodo}
+              deletePrompt={this.props.deletePrompt}
+              handleDeleteFilm={this.props.handleDeleteFilm}
+              updateTodo={this.props.updateTodo}
             />)
-        })}
+          })}
       </React.Fragment>
-    }
-  </div>
+    )
+  }
+
+  render() {
+    const { adminMessage, deletePrompt, todos, createTodo } = this.props;
+    return (
+      <div className="admin-wrapper">
+        <div className="admin-header">
+          <h1>Admin</h1>
+          <button className="button create" onClick={this.toggleCreate}>Add new film</button>
+        </div>
+        { adminMessage && <MessageModal message={this.props.adminMessage} /> }
+        { deletePrompt && this.renderDeleteModal() }
+        { todos.length > 0 &&
+          <React.Fragment>
+            { this.state.createForm && this.renderCreateForm() }
+            { this.renderUpdateForms() }
+            </React.Fragment>
+          }
+        </div>
+    )
+  }
+}
 
 export default Admin

@@ -6,11 +6,15 @@
   font-size: 1.1em;
   border: none;
   min-width: 100px;
+  max-height: 50px;
   &.danger {
     background-color: $danger-red;
   }
   &.cancel {
     background-color: $cancel-grey;
+  }
+  &.create {
+    margin: auto 0;
   }
   &:disabled {
     background-color: $disabled-grey;

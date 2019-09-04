@@ -1,5 +1,9 @@
 .admin-wrapper {
 	padding: 30px;
+	color: $grey;
+	h1 {
+		font-size: 2.5em;
+	}
 }
 
 .admin-wrapper h2 {
@@ -7,7 +11,7 @@
 }
 
 .admin-image-update {
-	height: 200px;
+	height: 225px;
 }
 
 .admin-image {
@@ -18,4 +22,9 @@
 		cursor: pointer;
 		filter: brightness(110%);
 	}
+}
+
+.admin-header {
+	display: flex;
+	justify-content: space-between;
 }

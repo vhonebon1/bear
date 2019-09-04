@@ -27,7 +27,7 @@ class CreateForm extends React.Component {
     const { title, url, createTodo } = this.props;
 
     return(
-      <div className="create-form">
+      <div className="formContainer">
         <img className="admin-image-update" alt="" src={`http://img.youtube.com/vi/${url}/0.jpg`} />
         <div className="inputContainer">
           <label>Video title</label>
