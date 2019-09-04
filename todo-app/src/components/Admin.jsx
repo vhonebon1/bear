@@ -1,11 +1,15 @@
 import React from 'react'
 import UpdateForm from './UpdateForm'
 import CreateForm from './CreateForm'
+import MessageModal from './MessageModal'
 
-const Admin = ({ todos, createTodo, updateTodo, deleteTodo }) =>
+const Admin = ({ todos, createTodo, updateTodo, deleteTodo, adminMessage }) =>
   <div className="admin-wrapper">
     <h1>Admin</h1>
     <h2>Add a new video</h2>
+    { adminMessage &&
+      <MessageModal message={adminMessage} />
+    }
     { todos.length > 0 &&
       <React.Fragment>
         <CreateForm

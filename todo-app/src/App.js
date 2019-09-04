@@ -6,6 +6,8 @@ import HomePage from './components/HomePage.jsx'
 import Admin from './components/Admin.jsx'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
+const UPDATE_MESSAGE = "Your updates have been made.\n  Please check only one film is ticked as large"
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -16,8 +18,19 @@ class App extends Component {
       url: "",
       large: null,
       selectedVideo: false,
-      hasFilms: false
+      hasFilms: false,
+      adminMessage: null
     }
+  }
+
+  componentDidUpdate = (nextProps, nextState) => {
+    if (this.state.adminMessage !== null) {
+      setTimeout(this.clearMessage, 3000)
+    }
+  }
+
+  clearMessage = () => {
+    this.setState({ adminMessage: null })
   }
 
   getTodos() {
@@ -54,7 +67,7 @@ class App extends Component {
       const todos = update(this.state.todos, {
         $splice: [[0, 0, response.data]]
       })
-      this.setState({ todos: todos, inputValue: "", title: "", url: "", large: null })
+      this.setState({ todos: todos, inputValue: "", title: "", url: "", large: null, adminMessage: "Hey" })
     })
     .catch(error => console.log(error))
   }
@@ -87,9 +100,13 @@ class App extends Component {
       const todos = update(this.state.todos, {
         [todoIndex]: {$set: response.data}
       })
-      this.setState({ todos: todos })
+      this.setState({ todos: todos, adminMessage: UPDATE_MESSAGE })
     })
     .catch(error => console.log(error))
+  }
+
+  fadeMessage = (message) => {
+    this.setState({ adminMessage: message });
   }
 
   deleteTodo = (id) => {
@@ -109,26 +126,29 @@ class App extends Component {
   }
 
   render() {
+    const { large, small, selectedVideo, hasFilms, adminMessage, todos } = this.state;
+
     return (
       <Router>
         <Switch>
           <Route path='/' exact render={(props) => (
             <HomePage
-              largeTile={this.state.large}
-              smallTiles={this.state.small}
+              largeTile={large}
+              smallTiles={small}
               updateTodo={this.updateTodo}
               handleSelectedVideo={this.handleSelectedVideo}
               handleClearSelected={this.handleClearSelected}
-              selectedVideo={this.state.selectedVideo}
-              hasFilms={this.state.hasFilms}
+              selectedVideo={selectedVideo}
+              hasFilms={hasFilms}
             />
           )} />
           <Route path='/tommy-admin' exact render={(props) => (
               <Admin
-                todos={this.state.todos}
+                todos={todos}
                 createTodo={this.createTodo}
                 updateTodo={this.updateTodo}
                 deleteTodo={this.deleteTodo}
+                adminMessage={adminMessage}
               />
             )} />
         </Switch>

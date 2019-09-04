@@ -8,19 +8,19 @@ const HomePage = ({ largeTile, smallTiles, updateTodo, selectedVideo, handleSele
   <React.Fragment>
     <div className={`homepage-wrapper ${selectedVideo && "modal"}`}>
       <Header />
-      { selectedVideo ?
+      { selectedVideo &&
         <VideoPlayer
           selectedVideo={selectedVideo}
           onEnded={handleClearSelected}
           handleClearSelected={handleClearSelected}
-        /> :
-        <LargeTile
-          hasFilms={hasFilms}
-          todo={largeTile}
-          updateTodo={updateTodo}
-          handleSelectedVideo={handleSelectedVideo}
         />
       }
+      <LargeTile
+        hasFilms={hasFilms}
+        todo={largeTile}
+        updateTodo={updateTodo}
+        handleSelectedVideo={handleSelectedVideo}
+      />
     </div>
     <SmallTiles
       hasFilms={hasFilms}

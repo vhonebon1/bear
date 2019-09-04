@@ -222,3 +222,20 @@ body {
 		}
 	}
 }
+
+.messageModal {
+	position: fixed;
+	margin: 0 auto;
+	width: 40vw;
+	height: 20vh;
+	color: #4B4A4E;
+	background-color: white;
+	border: 1px;
+	padding: 5em;
+	text-align: center;
+	border: 1px solid #4B4A4E;
+	border-radius: 20px;
+	z-index: 5;
+	font-size: 1.2em;
+	box-shadow: 10px 10px #d3d3d3;
+}
