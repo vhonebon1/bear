@@ -59,15 +59,10 @@ class UpdateForm extends React.Component {
               onChange={(e) => this.handleChangeUrl(e)}
             />
             <div className="formInner">
-              <div>
-                <input
-                  className="large-checkbox"
-                  type="checkbox"
-                  onChange={(e) => this.handleChangeLarge(e)}
-                  checked={this.state.large}
-                />
-                <label >Featured tile</label>
-              </div>
+              <label class="container">Featured tile
+                <input type="checkbox" onChange={(e) => this.handleChangeLarge(e)} checked={this.state.large} />
+                <span class="checkmark"></span>
+              </label>
               <div className="formInner-wrapper">
                 <button className="button" disabled={!this.hasChanges()} onClick={() => updateTodo(this.state.title, this.state.url, id, this.state.large)}>Update</button>
                 <button className="button danger" onClick={(e) => handleDeleteFilm(id)}>Delete</button>

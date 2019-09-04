@@ -53,13 +53,10 @@ class CreateForm extends React.Component {
           />
           <div className="formInner">
             <div>
-              <input
-                className="large-checkbox"
-                type="checkbox"
-                onChange={(e) => this.handleChangeLarge(e)}
-                checked={this.state.large}
-              />
-              <label>Featured tile</label>
+              <label class="container">Featured tile
+                <input type="checkbox" onChange={(e) => this.handleChangeLarge(e)} checked={this.state.large} />
+                <span class="checkmark"></span>
+              </label>
             </div>
             <button className="button" onClick={() => createTodo(this.state.title, this.state.url, this.state.large)}>Add</button>
           </div>
