@@ -23,7 +23,8 @@ class App extends Component {
       hasFilms: false,
       adminMessage: null,
       deletePrompt: null,
-      idToDelete: null
+      idToDelete: null,
+      createForm: false
     }
   }
 
@@ -48,6 +49,10 @@ class App extends Component {
 
   cancelDelete = () => {
     this.setState({ deletePrompt: null, idToDelete: null })
+  }
+
+  toggleCreate = () => {
+    this.setState({ createForm: !this.state.createForm })
   }
 
   getTodos() {
@@ -89,7 +94,8 @@ class App extends Component {
                       title: "",
                       url: "",
                       large: null,
-                      adminMessage: CREATE_MESSAGE })
+                      adminMessage: CREATE_MESSAGE,
+                      createForm: false })
     })
     .catch(error => console.log(error))
   }
@@ -175,6 +181,8 @@ class App extends Component {
                 handleDeleteFilm={this.handleDeleteFilm}
                 handleConfirmDelete={this.handleConfirmDelete}
                 cancelDelete={this.cancelDelete}
+                createForm={this.state.createForm}
+                toggleCreate={this.toggleCreate}
               />
             )} />
         </Switch>
