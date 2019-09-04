@@ -18,21 +18,19 @@ const Admin = ({ todos, createTodo, updateTodo, deleteTodo, adminMessage, delete
     }
     { todos.length > 0 &&
       <React.Fragment>
-        <CreateForm
-          createTodo={createTodo}
-        />
+        <CreateForm createTodo={createTodo} />
         <h2>Update existing videos</h2>
         {todos.map((todo) => {
           return(
-              <UpdateForm
-                title={todo.title}
-                url={todo.url}
-                id={todo.id}
-                large={todo.large}
-                deletePrompt={deletePrompt}
-                handleDeleteFilm={handleDeleteFilm}
-                updateTodo={updateTodo}
-              />)
+            <UpdateForm
+              title={todo.title}
+              url={todo.url}
+              id={todo.id}
+              large={todo.large}
+              deletePrompt={deletePrompt}
+              handleDeleteFilm={handleDeleteFilm}
+              updateTodo={updateTodo}
+            />)
         })}
       </React.Fragment>
     }

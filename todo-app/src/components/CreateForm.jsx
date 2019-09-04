@@ -41,7 +41,7 @@ class CreateForm extends React.Component {
           />
           <label className="formContainer__label">YouTube id
             <span> </span>
-            <a href="https://docs.joeworkman.net/rapidweaver/stacks/youtube/video-id" target="_blank">WTF is this?</a>
+            <a href="https://docs.joeworkman.net/rapidweaver/stacks/youtube/video-id" target="_blank" rel="noopener noreferrer" >WTF is this?</a>
           </label>
           <input
             className="taskInput"
