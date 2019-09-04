@@ -1,8 +1,11 @@
 .header-wrapper {
 	display: flex;
 	justify-content: space-around;
-	flex: 0 0 40%;
+	flex: 0 0 30%;
 	height: 70vh;
+	@include bp-medium {
+		flex: 0 0 40%;
+	}
 }
 
 .header-inner {
@@ -11,7 +14,9 @@
 
 .listWrapper {
 	flex: 0 0 60%;
-	padding: 0 60px 0 0;
+	@include bp-medium {
+		padding: 0 60px 0 0;
+	}
 }
 
 .header {

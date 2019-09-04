@@ -1,14 +1,22 @@
 .formContainer {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	margin: 20px 0 30px 0;
 	background-color: $form-background;
 	padding: 20px;
+	@include bp-medium {
+		flex-direction: row;
+	}
 }
 
 .inputContainer {
-	padding: 15px;
+	margin-top: 15px;
 	flex: 0 0 60%;
+	@include bp-medium {
+		padding: 15px;
+		margin-top: 0;
+	}
 }
 
 .inputContainer .taskInput {
@@ -29,12 +37,20 @@
 
 .formInner {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
+	@include bp-medium {
+		flex-direction: row;
+	}
 }
 
 .formInner-wrapper {
+	margin-top: 8px;
 	button {
 		margin-left: 8px;
+	}
+	@include bp-medium {
+		margin-top: 0;
 	}
 }
 

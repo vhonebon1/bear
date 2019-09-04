@@ -6,7 +6,9 @@
 	justify-content: space-between;
 	margin: 0;
 	padding: 0;
-	padding-right: 50px;
+	@include bp-medium {
+		padding-right: 50px;
+	}
 }
 
 .task {
@@ -19,7 +21,7 @@
 	font-size: 1.2em;
 	background-repeat: no-repeat;
   background-size: contain;
-	background-position: right center;
+	background-position: center center;
 	margin: auto 0;
 	svg, .video-title {
 		display: none;
@@ -29,6 +31,9 @@
 		svg, .video-title {
 			display:block;
 		}
+	}
+	@include bp-medium {
+		background-position: right center;
 	}
 }
 

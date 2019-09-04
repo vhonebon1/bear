@@ -12,7 +12,11 @@ body {
 
 .homepage-wrapper {
 	display: flex;
+	flex-direction: column;
 	height: 65vh;
 	width: 100vw;
 	background-color: $homepage-background;
+	@include bp-medium {
+		flex-direction: row;
+	}
 }
