@@ -7,7 +7,7 @@ const MessageModal = ({ message, deleteType, onSubmit, onCancel }) =>
   <div className="messageModal">
     <div className="messageModal-inner">
       { deleteType ?
-        <IosInformationCircle fontSize="70px" color="#D93025" />
+        <IosInformationCircle fontSize="70px" color="#FF595F" />
         : <IosCheckmarkCircleOutline fontSize="70px" color="#00B494" />
       }
       <div>{message}</div>
