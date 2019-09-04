@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import './App.scss';
+import './App.scss'
 import axios from 'axios'
 import update from 'immutability-helper'
 import HomePage from './components/HomePage.jsx'
 import Admin from './components/Admin.jsx'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-const UPDATE_MESSAGE = "Your updates have been made.\n  Please check only one film is ticked as large"
+const UPDATE_MESSAGE = "Your updates have been made. Don't forget to check that only one film is ticked as large."
+const CREATE_MESSAGE = "The new film has been added. Don't forget to check that only one film is ticked as large."
 
 class App extends Component {
   constructor(props) {
@@ -67,7 +68,12 @@ class App extends Component {
       const todos = update(this.state.todos, {
         $splice: [[0, 0, response.data]]
       })
-      this.setState({ todos: todos, inputValue: "", title: "", url: "", large: null, adminMessage: "Hey" })
+      this.setState({ todos: todos,
+                      inputValue: "",
+                      title: "",
+                      url: "",
+                      large: null,
+                      adminMessage: CREATE_MESSAGE })
     })
     .catch(error => console.log(error))
   }

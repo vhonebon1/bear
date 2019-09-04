@@ -1,0 +1,24 @@
+.smallTile {
+	height: 300px;
+	flex: 0 0 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background-repeat: no-repeat;
+	background-size: contain;
+	svg, .video-title {
+		display: none;
+	}
+	&:hover {
+		cursor: pointer;
+		.video-play-icon, .video-title {
+			display: block;
+		}
+	}
+}
+
+.smallTile-wrapper {
+	padding: 0 50px;
+	display: flex;
+	justify-content: space-between;
+}

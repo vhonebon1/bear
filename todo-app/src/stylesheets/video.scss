@@ -1,0 +1,30 @@
+.video-close svg {
+	float: right;
+	margin-bottom: 8px;
+	&:hover {
+		cursor: pointer;
+		align-items: right;
+	}
+}
+
+.video-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	z-index: 3;
+	display: flex;
+	justify-content: space-around;
+	background-color: rgba(0,0,0,.5);
+	display: flex;
+	justify-content: space-around;
+}
+
+.video-wrapper div {
+	margin-top: 5vh;
+}
+
+.video-inner {
+	z-index: 5;
+}

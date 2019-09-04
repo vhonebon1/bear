@@ -1,0 +1,36 @@
+.header-wrapper {
+	display: flex;
+	justify-content: space-around;
+	flex: 0 0 40%;
+	height: 70vh;
+}
+
+.header-inner {
+	margin: auto 0;
+}
+
+.listWrapper {
+	flex: 0 0 60%;
+	padding: 0 60px 0 0;
+}
+
+.header {
+	font: normal normal normal 34px/1.4em montserrat,sans-serif;
+	margin: 0;
+	line-height: 25px;
+	color: white;
+	font-weight: bold;
+	margin-bottom: 8px;
+	color: $grey;
+
+}
+
+.subtitle-wrapper {
+	display: flex;
+}
+
+.sub-header {
+	font: normal normal normal 24px/1.4em montserrat,sans-serif;
+	letter-spacing: 3px;
+	margin: 5px 0 0 10px;
+}

@@ -1,0 +1,33 @@
+.formContainer {
+	display: flex;
+	justify-content: space-between;
+	margin: 20px 0 30px 0;
+	border: 1px solid black;
+	padding: 20px;
+}
+
+.inputContainer {
+	padding: 15px;
+	flex: 0 0 60%;
+}
+
+.create-form {
+	border: 1px solid black;
+	padding: 20px;
+}
+
+.inputContainer .taskInput {
+	padding: 10px;
+	width: 100%;
+	border-radius: 25px;
+	box-sizing: border-box;
+	margin-top: 5px;
+}
+
+.formContainer__label {
+	margin-bottom: 10px;
+}
+
+.taskInput {
+	margin-bottom: 10px;
+}
