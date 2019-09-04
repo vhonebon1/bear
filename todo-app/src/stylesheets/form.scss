@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: space-between;
 	margin: 20px 0 30px 0;
-	border: 1px solid black;
+	border: 1px solid $grey;
 	padding: 20px;
 }
 
@@ -12,7 +12,9 @@
 }
 
 .create-form {
-	border: 1px solid black;
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid $grey;
 	padding: 20px;
 }
 
@@ -29,7 +31,7 @@
 }
 
 .taskInput {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
 
 .formInner {
@@ -43,6 +45,6 @@
 	}
 }
 
-.label-block {
-	margin-left: 8px;
+.large-checkbox {
+	margin-right: 8px;
 }

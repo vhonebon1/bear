@@ -5,13 +5,12 @@
   color: white;
   font-size: 1.1em;
   border: none;
+  min-width: 100px;
   &.danger {
     background-color: $danger-red;
   }
-  &.white {
-    background-color: white;
-    color: $grey;
-    border: 1px solid $grey;
+  &.cancel {
+    background-color: $cancel-grey;
   }
   &:disabled {
     background-color: $disabled-grey;

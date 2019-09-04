@@ -1,8 +1,11 @@
 $grey: #4B4A4E;
 $homepage-background: #E6EAEB;
 $danger-red: #D93025;
-$button-blue: #5DACEB;
-$disabled-grey: #DDDDDD;
+$button-blue: #1188FF;
+$disabled-grey: #d7d7d7;
+$cancel-grey: #687D91;
+$modal-grey: #F2F2F2;
+$modal-grey-darker: #d9d9d9;
 
 @mixin bp-large {
   @media only screen and (min-width: 800px) {

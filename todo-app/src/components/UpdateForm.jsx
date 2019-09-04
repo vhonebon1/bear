@@ -1,5 +1,4 @@
 import React from 'react'
-import MessageModal from './MessageModal'
 
 class UpdateForm extends React.Component {
 
@@ -62,11 +61,12 @@ class UpdateForm extends React.Component {
             <div className="formInner">
               <div>
                 <input
+                  className="large-checkbox"
                   type="checkbox"
                   onChange={(e) => this.handleChangeLarge(e)}
                   checked={this.state.large}
                   />
-                <label className="label-block">Featured tile</label>
+                <label >Featured tile</label>
               </div>
               <div className="formInner-wrapper">
                 <button className="button" disabled={!this.hasChanges()} onClick={() => updateTodo(this.state.title, this.state.url, id, this.state.large)}>Update</button>

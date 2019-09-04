@@ -14,7 +14,7 @@ const MessageModal = ({ message, deleteType, onSubmit, onCancel }) =>
       { deleteType &&
         <div className="buttons-wrapper">
           <button className="button danger" onClick={() => onSubmit()}>Delete</button>
-          <button className="button white" onClick={() => onCancel()}>Cancel</button>
+          <button className="button cancel" onClick={() => onCancel()}>Cancel</button>
         </div>
       }
     </div>

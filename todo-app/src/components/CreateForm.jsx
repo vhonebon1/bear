@@ -28,6 +28,7 @@ class CreateForm extends React.Component {
 
     return(
       <div className="create-form">
+        <img className="admin-image-update" alt="" src={`http://img.youtube.com/vi/${url}/0.jpg`} />
         <div className="inputContainer">
           <label>Video title</label>
           <input
@@ -50,13 +51,18 @@ class CreateForm extends React.Component {
             value={url}
             onChange={(e) => this.handleChangeUrl(e)}
           />
-          <input
-            type="checkbox"
-            onChange={(e) => this.handleChangeLarge(e)}
-            checked={this.state.large}
-          />
-          <label>Featured tile</label>
-          <button onClick={() => createTodo(this.state.title, this.state.url, this.state.large)}>Add</button>
+          <div className="formInner">
+            <div>
+              <input
+                className="large-checkbox"
+                type="checkbox"
+                onChange={(e) => this.handleChangeLarge(e)}
+                checked={this.state.large}
+              />
+              <label>Featured tile</label>
+            </div>
+            <button className="button" onClick={() => createTodo(this.state.title, this.state.url, this.state.large)}>Add</button>
+          </div>
         </div>
       </div>
     )
