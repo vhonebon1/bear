@@ -1,24 +1,15 @@
-.taskList {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	margin: 0;
-	padding: 0;
+.large-wrapper {
+	flex: 0 0 47%;
 }
 
 .large-tile {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	height: 85%;
-	list-style-type: none;
-	font-family: Tahoma;
-	font-size: 1.2em;
+	height: 100%;
 	background-repeat: no-repeat;
   background-size: contain;
-	background-position: center center;
+	background-position: top center;
 	margin: 0 auto;
 	svg, .video-title {
 		display: none;
@@ -28,9 +19,6 @@
 		svg, .video-title {
 			display:block;
 		}
-	}
-	@include bp-medium {
-		background-position: right center;
 	}
 }
 

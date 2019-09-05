@@ -18,19 +18,21 @@ const HomePage = ({ largeTile, smallTiles, updateTodo, selectedVideo, handleSele
           handleClearSelected={handleClearSelected}
         />
       }
+      <div className="wrap">
+        <LargeTile
+          hasFilms={hasFilms}
+          todo={largeTile}
+          updateTodo={updateTodo}
+          handleSelectedVideo={handleSelectedVideo}
+          />
+        <SmallTiles
+          hasFilms={hasFilms}
+          todos={smallTiles}
+          updateTodo={updateTodo}
+          handleSelectedVideo={handleSelectedVideo}
+          />
+      </div>
     </div>
-    <LargeTile
-      hasFilms={hasFilms}
-      todo={largeTile}
-      updateTodo={updateTodo}
-      handleSelectedVideo={handleSelectedVideo}
-      />
-    <SmallTiles
-      hasFilms={hasFilms}
-      todos={smallTiles}
-      updateTodo={updateTodo}
-      handleSelectedVideo={handleSelectedVideo}
-    />
   </React.Fragment>
 
 export default HomePage
