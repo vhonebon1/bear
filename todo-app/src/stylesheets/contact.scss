@@ -1,0 +1,18 @@
+.contact {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  top: 0;
+  right: 30px;
+  width: 40px;
+  height: 70px;
+  background-color: $contact-pink;
+  padding: 20px;
+  border-radius: 3px;
+  svg {
+    margin: auto 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

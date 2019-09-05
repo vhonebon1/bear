@@ -1,11 +1,5 @@
 .header-wrapper {
-	display: flex;
-	justify-content: space-around;
-	flex: 0 0 30%;
-	height: 70vh;
-	@include bp-medium {
-		flex: 0 0 40%;
-	}
+	padding: 30px;
 }
 
 .header-inner {
@@ -13,29 +7,39 @@
 }
 
 .listWrapper {
+	display: flex;
+	justify-content: space-around;
 	flex: 0 0 60%;
-	@include bp-medium {
-		padding: 0 60px 0 0;
-	}
 }
 
 .header {
-	font: normal normal normal 34px/1.4em montserrat,sans-serif;
+	font: normal normal normal 90px/1.4em 'playfair display',serif;
 	margin: 0;
-	line-height: 25px;
 	color: white;
 	font-weight: bold;
-	margin-bottom: 8px;
 	color: $grey;
-
+	text-align: center;
+	line-height: 90px;
 }
 
 .subtitle-wrapper {
 	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.subtitle-inner {
+	display: flex;
+	h4 {
+		margin-top: 8px;
+	}
+	svg {
+		margin-top: 16px;
+	}
 }
 
 .sub-header {
-	font: normal normal normal 24px/1.4em montserrat,sans-serif;
+	font: normal normal normal 40px/1.4em 'playfair display',serif;
 	letter-spacing: 3px;
-	margin: 5px 0 0 10px;
+	margin: 0 0 0 15px;
 }

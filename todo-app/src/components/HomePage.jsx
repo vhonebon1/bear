@@ -3,10 +3,13 @@ import Header from './Header'
 import LargeTile from './LargeTile'
 import SmallTiles from './SmallTiles'
 import VideoPlayer from './VideoPlayer'
+import Contact from './Contact'
 
 const HomePage = ({ largeTile, smallTiles, updateTodo, selectedVideo, handleSelectedVideo, handleClearSelected, hasFilms }) =>
   <React.Fragment>
     <div className={`homepage-wrapper ${selectedVideo && "modal"}`}>
+      <div className="color-block"></div>
+      <Contact />
       <Header />
       { selectedVideo &&
         <VideoPlayer
@@ -15,13 +18,13 @@ const HomePage = ({ largeTile, smallTiles, updateTodo, selectedVideo, handleSele
           handleClearSelected={handleClearSelected}
         />
       }
-      <LargeTile
-        hasFilms={hasFilms}
-        todo={largeTile}
-        updateTodo={updateTodo}
-        handleSelectedVideo={handleSelectedVideo}
-      />
     </div>
+    <LargeTile
+      hasFilms={hasFilms}
+      todo={largeTile}
+      updateTodo={updateTodo}
+      handleSelectedVideo={handleSelectedVideo}
+      />
     <SmallTiles
       hasFilms={hasFilms}
       todos={smallTiles}

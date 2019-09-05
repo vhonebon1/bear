@@ -7,7 +7,7 @@ const Admin = ({ adminMessage, deletePrompt, handleConfirmDelete, cancelDelete, 
   <div className="admin-wrapper">
     <div className="admin-header">
       <h1>Admin</h1>
-      <button className="button create" onClick={() => toggleCreate()}>Add new film</button>
+      <button className="button create" onClick={() => toggleCreate()}>Add new video</button>
     </div>
     { adminMessage && <MessageModal message={adminMessage} /> }
     { deletePrompt &&

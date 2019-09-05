@@ -30,7 +30,7 @@ class App extends Component {
 
   componentDidUpdate = (nextProps, nextState) => {
     if (this.state.adminMessage !== null) {
-      setTimeout(this.clearMessage, 2000)
+      setTimeout(this.clearMessage, 2500)
     }
   }
 
