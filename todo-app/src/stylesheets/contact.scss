@@ -3,16 +3,24 @@
   display: flex;
   justify-content: space-around;
   top: 0;
-  right: 30px;
+  right: 0;
   width: 40px;
   height: 70px;
-  background-color: $contact-pink;
-  padding: 20px;
+  background-color: none;
+  padding: 5px;
   border-radius: 3px;
   svg {
-    margin: auto 0;
+    margin-top: 0;
     &:hover {
       cursor: pointer;
     }
+    @include bp-medium {
+      margin: auto 0;
+    }
+  }
+  @include bp-medium {
+    right: 30px;
+    padding: 20px;
+    background-color: $contact-pink;
   }
 }

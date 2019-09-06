@@ -1,5 +1,8 @@
 .large-wrapper {
-	flex: 0 0 47%;
+	flex: 0 0 100%;
+	@include bp-medium {
+		flex: 0 0 49%;
+	}
 }
 
 .large-tile {

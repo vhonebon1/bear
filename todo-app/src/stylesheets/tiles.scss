@@ -5,6 +5,8 @@
 	justify-content: space-around;
 	background-repeat: no-repeat;
 	background-size: contain;
+	background-position: top center;
+	margin-bottom: 5px;
 	svg, .video-title {
 		display: none;
 	}
@@ -15,17 +17,18 @@
 		}
 	}
 	@include bp-medium {
-		flex: 0 0 47%;
+		flex: 0 0 49%;
 	}
 }
 
 .smallTile-wrapper {
-	flex: 0 0 47%;
+	flex: 0 0 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	@include bp-medium {
 		flex-direction: row;
 		flex-wrap: wrap;
+		flex: 0 0 49%;
 	}
 }
