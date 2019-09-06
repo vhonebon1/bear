@@ -7,7 +7,11 @@ const SmallTiles = ({ todos, handleSelectedVideo, hasFilms }) =>
       <React.Fragment>
         {todos.map((todo) => {
           return(
-            <div className="smallTile" key={todo.id} style={{ backgroundImage: `url(http://img.youtube.com/vi/${todo.url}/0.jpg)`}}></div>
+            <div
+              className="smallTile"
+              key={todo.id}
+              onClick={(id) => handleSelectedVideo(todo.url)}
+              style={{ backgroundImage: `url(http://img.youtube.com/vi/${todo.url}/0.jpg)`}}></div>
           )
         })}
       </React.Fragment>

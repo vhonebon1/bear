@@ -19,9 +19,7 @@
 	}
 	&:hover {
 		cursor: pointer;
-		svg, .video-title {
-			display:block;
-		}
+		filter: brightness(115%);
 	}
 	@include bp-large {
 		background-position: top center;

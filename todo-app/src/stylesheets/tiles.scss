@@ -12,9 +12,7 @@
 	}
 	&:hover {
 		cursor: pointer;
-		.video-play-icon, .video-title {
-			display: block;
-		}
+		filter: brightness(115%);
 	}
 	@include bp-medium {
 		flex: 0 0 49%;
