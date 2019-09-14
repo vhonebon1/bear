@@ -2,13 +2,13 @@ import React from 'react'
 import IosPlayOutline from 'react-ionicons/lib/IosPlayOutline'
 
 const SmallTiles = ({ todos, handleSelectedVideo, hasFilms }) =>
-  <div className="smallTile-wrapper">
+  <div className="tileWrapper">
     { hasFilms &&
       <React.Fragment>
         {todos.map((todo) => {
           return(
             <div
-              className="smallTile"
+              className="tile"
               key={todo.id}
               onClick={(id) => handleSelectedVideo(todo.url)}
               style={{ backgroundImage: `url(http://img.youtube.com/vi/${todo.url}/0.jpg)`}}></div>

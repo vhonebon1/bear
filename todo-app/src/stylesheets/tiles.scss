@@ -1,12 +1,23 @@
-.smallTile {
+.tileWrapper {
+	@include bp-medium {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		flex-wrap: wrap;
+		flex: 0 0 49%;
+	}
+}
+
+.tile {
 	flex: 0 0 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
 	background-repeat: no-repeat;
 	background-size: contain;
+	padding-top: 38%;
 	background-position: top center;
-	margin-bottom: 5px;
+	width: 98%;
+  height: 0;
+  padding-top: 76%;
+	margin:  0 auto;
 	svg, .video-title {
 		display: none;
 	}
@@ -15,18 +26,15 @@
 		filter: brightness(115%);
 	}
 	@include bp-medium {
+		display: flex;
 		flex: 0 0 49%;
+		justify-content: space-around;
+		padding-top: 38%;
 	}
-}
-
-.smallTile-wrapper {
-	flex: 0 0 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	@include bp-medium {
-		flex-direction: row;
-		flex-wrap: wrap;
-		flex: 0 0 49%;
+	&.large {
+		@include bp-medium {
+			flex: 0 0 100%;
+			padding-top: 75%;
+		}
 	}
 }
